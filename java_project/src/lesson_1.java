@@ -11,17 +11,24 @@ public class lesson_1 {
 //                Пункты реализовать в методе main
 //*Пункты реализовать в разных методах
         Random rnd = new Random();
-        int[] m = new int[2];
+        int m1 = 0;
+        int m2 = 0;
         int t = rnd.nextInt(-1000, 1000);
         int i = t;
         int n = Integer.highestOneBit(i);
         while (i < Short.MAX_VALUE) {
             if (i%n == 0){
-                System.out.println(i);
+                m1++;
+            }
+            i++;
+        }
+        while (Short.MIN_VALUE > i) {
+            if (i%n != 0){
+                m2++;
             }
             i++;
         }
         System.out.println(t + " " + n);
-        System.out.println(m[0]);
+        System.out.println(m1 + " " + m2);
     }
 }
