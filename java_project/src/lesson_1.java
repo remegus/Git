@@ -22,13 +22,15 @@ public class lesson_1 {
             }
             i++;
         }
-        while (Short.MIN_VALUE > i) {
+        i = t;
+        while (Short.MIN_VALUE < i) {
             if (i%n != 0){
                 m2++;
             }
-            i++;
+            i--;
         }
-        System.out.println(t + " " + n);
-        System.out.println(m1 + " " + m2);
+        System.out.println("Случайное число:" + t + " ->  Номер старшего значащего бита:" + n);
+        System.out.println("Количество кратных старшего значащего бита в максимум:" + m1 +
+                "\nКоличество некратных старшего значащего бита в минимум " + m2);
     }
 }
