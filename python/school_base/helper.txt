@@ -1,0 +1,30 @@
+
+
+Courses:
+        1. -id
+        2.0 Course_Name
+        
+Teachers:
+        1. -id
+        2.0 Course_id
+        3.1 First_Name
+        4.2 Last_Name
+        5.3 Mail
+        6.4 Number_Phone
+
+
+Streams:
+        1. -id
+        2.0 Teacher_id
+        3.1 Number
+        4. -Student_Amount
+        5.2 Date_Start
+        6.3 Date_Finish
+      
+Students:
+        1. -id
+        2.0 Stream_id
+        3.1 S_First_Name
+        4.2 S_Last_Name
+        5.3 S_Mail
+        6.4 S_Number_Phone

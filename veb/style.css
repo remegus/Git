@@ -1,0 +1,73 @@
+body {
+    background: rgb(255, 208, 0);
+}
+
+.top {
+    width: 90%;
+    height: 200;
+    margin: auto;
+    /* border: 1px solid black; */
+}
+
+h1 {
+    padding-left: 35%;
+    color: black;
+}
+
+h3 {
+    padding-left: 10%;
+    color: black;
+}
+
+.content {
+    border: 1px solid black;
+}
+
+.cats {
+    margin: 25px;
+    /* border: 1px solid red; */
+    width: 40%;
+    height: 500px;
+    float: left;
+}
+
+.dogs {
+    margin-left: 50%;
+    margin-top: 50px;
+    ;
+    /* border: 1px solid red; */
+    width: 40%;
+    height: 500px;
+    margin-bottom: 25px;
+}
+
+.image {
+    width: 450px;
+    height: 285px;
+    padding-left: 60px;
+}
+
+.text {
+    margin-left: 6%;
+    margin-right: 6%;
+}
+
+button {
+    margin-left: 10%;
+}
+
+.footer {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.frooter {
+    margin-top: 100px;
+    float: left;
+}
+
+.footimg {
+
+    margin-left: 75%;
+    margin-top: -200px;
+}
