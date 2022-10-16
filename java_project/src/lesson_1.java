@@ -11,26 +11,37 @@ public class lesson_1 {
 //                Пункты реализовать в методе main
 //*Пункты реализовать в разных методах
         Random rnd = new Random();
-        int m1 = 0;
-        int m2 = 0;
-        int t = rnd.nextInt(-1000, 1000);
-        int i = t;
-        int n = Integer.highestOneBit(i);
+        int i = rnd.nextInt(-1000, 1000);
+        int n = hightbit(i);
+        int m1 = ma_v(i, n);
+        int m2 = mi_v(i, n);
+
+        System.out.println("Случайное число:" + i + " ->  Номер старшего значащего бита:" + n);
+        System.out.println("Количество кратных старшего значащего бита в максимум:" + m1 +
+                "\nКоличество некратных старшего значащего бита в минимум " + m2);
+    }
+    public static int hightbit(int x){
+        int y = Integer.highestOneBit(x);
+        return y;
+    }
+    public static int ma_v (int i, int n){
+        int m = 0;
         while (i < Short.MAX_VALUE) {
             if (i%n == 0){
-                m1++;
+                m++;
             }
             i++;
         }
-        i = t;
+        return m;
+    }
+    public static int mi_v(int i, int n){
+        int m = 0;
         while (Short.MIN_VALUE < i) {
             if (i%n != 0){
-                m2++;
+                m++;
             }
             i--;
         }
-        System.out.println("Случайное число:" + t + " ->  Номер старшего значащего бита:" + n);
-        System.out.println("Количество кратных старшего значащего бита в максимум:" + m1 +
-                "\nКоличество некратных старшего значащего бита в минимум " + m2);
+        return m;
     }
 }
