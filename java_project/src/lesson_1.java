@@ -25,25 +25,23 @@ public class lesson_1 {
         w_one(mf1);
         w_two(mf2);
     }
-
-    public static int hightbit(int x) {
+    public static int hightbit(int x){
         int y = Integer.highestOneBit(x);
         return y;
     }
-
-    public static int[] ma_v(int i, int n) {
+    public static int[] ma_v (int i, int n){
         int m = 0;
         int s = 0;
         int t = i;
         while (i < Short.MAX_VALUE) {
-            if (i % n == 0) {
+            if (i%n == 0){
                 m++;
             }
             i++;
         }
         int[] m1 = new int[m];
         while (t < Short.MAX_VALUE) {
-            if (t % n == 0) {
+            if(t%n == 0){
                 m1[s] = t;
                 s++;
             }
@@ -51,20 +49,19 @@ public class lesson_1 {
         }
         return m1;
     }
-
-    public static int[] mi_v(int i, int n) {
+    public static int[] mi_v(int i, int n){
         int m = 0;
         int s = 0;
         int t = i;
         while (Short.MIN_VALUE < i) {
-            if (i % n != 0) {
+            if (i%n != 0){
                 m++;
             }
             i--;
         }
         int[] m2 = new int[m];
         while (Short.MIN_VALUE < t) {
-            if (t % n != 0) {
+            if (t%n != 0){
                 m2[s] = t;
                 s++;
             }
@@ -72,21 +69,19 @@ public class lesson_1 {
         }
         return m2;
     }
-
-    public static String fin(int[] x) {
+    public static String fin(int[] x){
         String red = Arrays.toString(x);
         return red;
     }
-
-    public static void w_one(String x) {
-        try (FileWriter writer = new FileWriter("mf_one.txt", false)) {
+    public static void w_one(String x){
+        try(FileWriter writer = new FileWriter("mf_one.txt", false)) {
             writer.write(x);
             writer.flush();
-        } catch (IOException ex) {
+        }
+        catch(IOException ex){
             System.out.println(ex.getMessage());
         }
     }
-
     public static void w_two(String x) {
         try (FileWriter writer = new FileWriter("mf_two.txt", false)) {
             writer.write(x);
