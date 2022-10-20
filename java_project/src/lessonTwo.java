@@ -14,16 +14,40 @@ public class lessonTwo {
         String seyXone = "ехал Грека через реку"; //21
         String seyYone = "видит Грека, в реке рак"; //23
 
-        int result = howMany(seyXone, seyYone);
+        int result = whoBigger(seyXone, seyYone);
         System.out.println(result);
 
-        String seyXtwo = perevorot(seyXone);
-        String seyYtwo = perevorot(seyYone);
+        String seyXtwo = reverseText(seyXone);
+        String seyYtwo = reverseText(seyYone);
         System.out.println(seyXone + " - " + seyXtwo + "\n" + seyYone + " - " + seyYtwo);
 
+        StringBuilder mat = new StringBuilder();
+        mat = four(mat);
+        StringBuilder matFive = five(mat);
+        StringBuilder matSix = six(mat);
+        System.out.println(mat + "\n - - - - - - - \n" + matFive + "\n - - - - - - - \n" + matSix);
+    }
+    static int whoBigger(String x ,String y){
+        int xOne = x.length();
+        int yOne = y.length();
+        if (xOne > yOne){
+            return xOne;
+        } else {
+            return yOne;
+        }
+
+    }
+    static String reverseText(String x) {
+        return new StringBuilder(x).reverse().toString();
+    }
+    static int rd(int x, int y){
+        Random rnd = new Random();
+        int r = rnd.nextInt(x, y);
+        return r;
+    }
+    static StringBuilder four(StringBuilder mat){
         int matX = rd(1, 10);
         int matY = rd(11, 99);
-        StringBuilder mat = new StringBuilder();
         mat.append(matX);
         mat.append(" + ");
         mat.append(matY);
@@ -41,28 +65,7 @@ public class lessonTwo {
         mat.append(matY);
         mat.append(" = ");
         mat.append(matX*matY);
-        System.out.println(mat);
-        StringBuilder matFive = five(mat);
-        StringBuilder matSix = six(mat);
-        System.out.println("\n - - - - - - - \n" + matFive + "\n - - - - - - - \n" + matSix);
-    }
-    static int howMany(String x ,String y){
-        int xOne = x.length();
-        int yOne = y.length();
-        if (xOne > yOne){
-            return xOne;
-        } else {
-            return yOne;
-        }
-
-    }
-    static String perevorot(String x) {
-        return new StringBuilder(x).reverse().toString();
-    }
-    static int rd(int x, int y){
-        Random rnd = new Random();
-        int r = rnd.nextInt(x, y);
-        return r;
+        return mat;
     }
     static StringBuilder five(StringBuilder mat){
         int[] rt = new int[mat.length()/5];
