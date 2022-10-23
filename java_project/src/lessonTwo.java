@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Random;
 
 public class lessonTwo {
@@ -26,45 +25,43 @@ public class lessonTwo {
         StringBuilder matFive = five(mat);
         StringBuilder matSix = six(mat);
         System.out.println(mat + "\n - - - - - - - \n" + matFive + "\n - - - - - - - \n" + matSix);
+        long time = System.currentTimeMillis();
+        seven(mat);
+        System.out.println((double)(System.currentTimeMillis()) - time);
     }
-    static int whoBigger(String x ,String y){
+    static int whoBigger(String x ,String y) {
         int xOne = x.length();
         int yOne = y.length();
-        if (xOne > yOne){
-            return xOne;
-        } else {
-            return yOne;
-        }
-
+        return xOne > yOne ? xOne : yOne;
     }
     static String reverseText(String x) {
         return new StringBuilder(x).reverse().toString();
     }
-    static int rd(int x, int y){
-        Random rnd = new Random();
-        int r = rnd.nextInt(x, y);
-        return r;
+    static int rd(int x, int y) {
+        return new Random().nextInt(x, y);
     }
     static StringBuilder four(StringBuilder mat){
         int matX = rd(1, 10);
         int matY = rd(11, 99);
+//        String.format("%s + %s = %s %s - %s = %s %s * %s = %s", matX, matY, matX + matY, matX, matY, matX - matY, matX, matY, matX * matY);
         mat.append(matX);
         mat.append(" + ");
         mat.append(matY);
         mat.append(" = ");
         mat.append(matX + matY);
-        mat.append("\n");
+        mat.append("  ");
         mat.append(matX);
         mat.append(" - ");
         mat.append(matY);
         mat.append(" = ");
         mat.append(matX-matY);
-        mat.append("\n");
+        mat.append("  ");
         mat.append(matX);
         mat.append(" * ");
         mat.append(matY);
         mat.append(" = ");
         mat.append(matX*matY);
+        mat.append("\n");
         return mat;
     }
     static StringBuilder five(StringBuilder mat){
@@ -90,6 +87,12 @@ public class lessonTwo {
             }
         }
         return mat;
+    }
+    static void seven(StringBuilder mat){
+        for (int i = 0; i<10000; i++){
+            mat = four(mat);
+        }
+        five(mat);
     }
 
 }
